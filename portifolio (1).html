@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shery Emad | Full Stack Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    scroll-behavior:smooth;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    background:#0f172a;
+    padding:15px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    z-index:1000;
+}
+
+nav h2{
+    color:#38bdf8;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+#typing
+{
+  border-right: 2px solid #38bdf8;
+  padding-right: 5px;
+  font-weight: bold;
+  animation: blink 0.7s infinite;
+    color: #9cc2eb;
+}
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #9cc2eb; }
+    100% { border-color: transparent; }
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:100vh;
+}
+
+.hero-text h1{
+    font-size:40px;
+}
+
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #38bdf8;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    margin-top:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 5px 20px rgba(56,189,248,0.3);
+}
+
+.skills span{
+    display:inline-block;
+    background:#38bdf8;
+    color:black;
+    padding:8px 15px;
+    border-radius:20px;
+    margin:5px;
+    font-weight:bold;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#38bdf8;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e293b;
+}
+.skills-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.skill-card{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.skill-card:hover{
+transform:translateY(-6px);
+box-shadow:0 5px 25px rgba(56,189,248,0.4);
+}
+
+.skill-card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.skill-desc{
+color:#cbd5e1;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.tools{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:15px;
+}
+
+.tools span{
+background:#38bdf8;
+color:black;
+padding:6px 14px;
+border-radius:20px;
+font-size:13px;
+font-weight:bold;
+}
+
+.skill-card ul{
+padding-left:18px;
+color:#d1d5db;
+line-height:1.6;
+}
+
+.problem-solving{
+margin-top:50px;
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+.problem-solving h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.problem-solving p{
+color:#d1d5db;
+line-height:1.6;
+max-width:700px;
+margin:auto;
+margin-bottom:10px;
+}
+
+.progress-bar {
+    height: 12px;
+    width: 100%;
+    background: #1a1a3f;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #6a5af9, #00d4ff);
+    width: 0%;
+    transition: width 1.5s ease-in-out;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
+}
+
+.timeline{
+    position:relative;
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:20px;
+    top:0;
+    width:2px;
+    height:100%;
+    background:#38bdf8;
+}
+
+.timeline-item{
+    position:relative;
+    margin-left:60px;
+    margin-bottom:40px;
+}
+
+.timeline-date{
+    background:#1e293b;
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.experience-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.experience-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 5px 25px rgba(56,189,248,0.3);
+}
+
+.experience-card h3{
+    margin-bottom:10px;
+}
+
+.company{
+    color:#9cc2eb;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.tag{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin:10px 0;
+    font-weight:bold;
+}
+
+.challenge{
+    background:#7c2d12;
+    color:#ff7b7b;
+}
+
+.action{
+    background:#1e3a8a;
+    color:#60a5fa;
+}
+
+.result{
+    background:#064e3b;
+    color:#34d399;
+}
+.education-wrapper{
+    max-width:800px;
+    margin:auto;
+}
+
+.education-card{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+    transition:0.3s;
+    text-align:left;
+}
+
+.education-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 5px 25px rgba(56,189,248,0.3);
+}
+
+.education-date{
+    display:inline-block;
+    background:#0f172a;
+    color:#38bdf8;
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.university{
+    color:#9cc2eb;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.edu-description{
+    line-height:1.6;
+    color:#d1d5db;
+}
+.about-card{
+    text-align:center;
+}
+
+.about-stats{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.stat-circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:linear-gradient(145deg,#1e293b,#0f172a);
+    display:flex;
+    flex-direction:column;
+   margin-top:-1px ;
+    align-items:center;
+    box-shadow:0 0 20px rgba(56,189,248,0.2);
+    transition:0.3s;
+}
+
+.stat-circle:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px rgba(56,189,248,0.6);
+}
+
+.stat-circle h3{
+    color:#38bdf8;
+    font-size:20px;
+     margin-top:7px;
+}
+
+.stat-circle p{
+    font-size:10px;
+   margin: 8px;
+    color:#cbd5e1;
+}
+
+.certificates-wrapper{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+.certificate-card{
+background:#1e293b;
+padding:35px;
+border-radius:15px;
+max-width:800px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.certificate-card:hover{
+transform:translateY(-6px);
+box-shadow:0 5px 25px rgba(56,189,248,0.4);
+}
+
+.certificate-logo{
+width:160px;
+margin-bottom:20px;
+}
+
+.certificate-org{
+color:#9cc2eb;
+margin-bottom:10px;
+}
+
+.certificate-desc{
+color:#d1d5db;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.certificate-skills span{
+display:inline-block;
+background:#38bdf8;
+color:black;
+padding:6px 14px;
+border-radius:20px;
+margin:5px;
+font-weight:bold;
+font-size:13px;
+}
+
+.projects-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.project-card{
+  background:linear-gradient(#11122b,#0d0d1c);
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 35px rgba(56,189,248,0.5);
+}
+
+.project-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.project-info{
+  padding:20px;
+}
+
+.project-info .date{
+  color:#9ca3af;
+  font-size:14px;
+}
+
+.project-info .project-title{
+  font-size:24px;
+  margin:10px 0;
+  color:#38bdf8;
+}
+
+.project-info p{
+  color:#cbd5e1;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.tag{
+  padding:6px 15px;
+  border-radius:20px;
+  background:#38bdf8;
+  color:black;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.project-info button{
+  padding:10px 20px;
+  border:none;
+  border-radius:8px;
+  background:#38bdf8;
+  color:black;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.project-info button:hover{
+  background:white;
+}
+
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 1px solid #2f2f4f;
+    background: #14142a;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.filter-btn:hover {
+    background: linear-gradient(90deg,#3b82f6,#8b5cf6);
+    border: none;
+}
+
+.filter-btn.active {
+    background: linear-gradient(90deg,#3b82f6,#8b5cf6);
+    border: none;
+    transform: translateY(2px); /* يدي إحساس بالضغط */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.services-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.service-card{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.service-card:hover{
+transform:translateY(-6px);
+box-shadow:0 5px 25px rgba(56,189,248,0.4);
+}
+
+.service-card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.service-card p{
+color:#d1d5db;
+margin-bottom:15px;
+}
+
+.service-card ul{
+list-style:none;
+padding:0;
+color:#cbd5e1;
+}
+
+.service-card li{
+margin-bottom:6px;
+}
+
+.contact-wrapper{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+.contact-card{
+background:#1e293b;
+padding:40px;
+border-radius:15px;
+max-width:600px;
+width:100%;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-6px);
+box-shadow:0 5px 25px rgba(56,189,248,0.4);
+}
+
+.contact-card form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-card input,
+.contact-card textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+font-size:14px;
+resize:none;
+}
+
+.contact-card button{
+padding:12px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-card button:hover{
+background:white;
+}
+
+#form-message{
+color:#34d399;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<nav>
+    <h2>Shery Emad</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+         <li><a href="#education">Education</a></li>
+         <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hello, I'm <span>Shery Emad</span></h1>
+        <h3><span id="typing"></span></h3>
+        <p>Passionate about building intelligent systems and web applications.</p>
+        <br>
+        <button onclick="scrollToSection('projects')">View My Work</button>
+        <a href="C:\Users\Win\Documents\shery's_CV[1].pdf" download="Shery_Emad_CV.pdf">
+  <button>Download CV</button>
+</a>
+
+    </div>
+
+    <!-- مكان الصورة -->
+    <img src="https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/avatars/284995_1773398244_69b3e8e466081.webp" alt="Profile Picture">
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="card about-card">
+        <p>
+            I’m a results-driven Full Stack Developer with a strong foundation in building scalable web applications and intelligent systems. 
+            With hands-on experience in both frontend and backend development, I focus on writing clean, efficient code and delivering real-world solutions.
+        </p>
+
+        <!-- Stats Circles -->
+        <div class="about-stats">
+            <div class="stat-circle">
+                <h3>2+</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat-circle">
+                <h3>3+</h3>
+                <p>Projects Completed</p>
+            </div>
+
+            <div class="stat-circle">
+                <h3>10+</h3>
+                <p>Technologies</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="education">
+<h2 class="section-title">Education</h2>
+
+<div class="education-wrapper">
+
+<div class="education-card">
+
+
+
+<div class="education-date">2023 — 2027</div>
+
+<h3>Bachelor of Computer Science</h3>
+
+<p class="university">Fayoum University</p>
+
+<p class="edu-description">
+Studying core computer science concepts including 
+Data Structures, Algorithms, Object-Oriented Programming, 
+Databases, and Software Engineering.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="certificates">
+
+<h2 class="section-title">Certificates</h2>
+
+<div class="certificates-wrapper">
+
+<div class="certificate-card">
+
+<img src="C:\Users\Win\Downloads\WhatsApp Image 2026-03-13 at 10.42.12 AM.jpeg" class="certificate-logo">
+
+<h3>Front-End Web Development</h3>
+
+<p class="certificate-org">National Telecommunication Institute (NTI)</p>
+
+<p class="certificate-desc">
+Completed a professional training program focused on modern web development technologies including HTML, CSS, JavaScript, and responsive design.
+</p>
+
+<div class="certificate-skills">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Responsive Design</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-container">
+
+<!-- Frontend -->
+<div class="skill-card">
+<h3>Frontend Development</h3>
+
+<p class="skill-desc">
+Building responsive and interactive user interfaces that provide a smooth user experience across all devices.
+</p>
+
+<h4>Tools</h4>
+
+<div class="tools">
+<span>HTML5</span>
+<span>CSS3</span>
+<span>Bootstrap</span>
+<span>JavaScript</span>
+<span>React</span>
+</div>
+
+<h4>What I Can Do</h4>
+
+<ul>
+<li>Build responsive websites</li>
+<li>Create modern UI layouts</li>
+<li>Develop interactive web interfaces</li>
+<li>Connect frontend with backend APIs</li>
+</ul>
+
+</div>
+
+
+<!-- Backend -->
+<div class="skill-card">
+<h3>Backend Development</h3>
+
+<p class="skill-desc">
+Developing secure and scalable server-side applications and APIs that power modern web applications.
+</p>
+
+<h4>Tools</h4>
+
+<div class="tools">
+<span>.NET</span>
+<span>ASP.NET Core</span>
+<span>REST APIs</span>
+<span>SQL Server</span>
+</div>
+
+<h4>What I Can Do</h4>
+
+<ul>
+<li>Build RESTful APIs</li>
+<li>Handle authentication and security</li>
+<li>Connect applications to databases</li>
+<li>Create scalable backend systems</li>
+</ul>
+
+</div>
+
+
+<!-- Programming -->
+<div class="skill-card">
+<h3>Programming</h3>
+
+<p class="skill-desc">
+Writing clean, efficient, and maintainable code using modern programming principles and best practices.
+</p>
+
+<h4>Tools</h4>
+
+<div class="tools">
+<span>C#</span>
+<span>JavaScript</span>
+<span>TypeScript</span>
+<span>OOP</span>
+</div>
+
+<h4>What I Can Do</h4>
+
+<ul>
+<li>Write structured and maintainable code</li>
+<li>Apply Object-Oriented Programming principles</li>
+<li>Build scalable application logic</li>
+<li>Develop reusable components</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<!-- Problem Solving -->
+
+<div class="problem-solving">
+
+<h3>Problem Solving</h3>
+
+<p>
+Strong analytical and problem-solving skills with the ability to break complex problems into smaller logical steps.  
+Experienced in writing efficient algorithms and debugging applications to find optimal solutions.
+</p>
+
+<p>
+I use data structures and algorithmic thinking to design efficient solutions and improve application performance.
+</p>
+
+</div>
+
+</section>
+    
+
+
+<section id="experience">
+    <h2 class="section-title"> Experience</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-date">Nov 2025 — May 2026</div>
+
+            <div class="experience-card">
+              <h3>Full-Stack Training — .NET & React</h3>
+<p class="company">Digital Egypt Pioneers Initiative (DEPI) — Online</p>
+
+<div class="tag challenge">Challenge</div>
+<p>
+    Building scalable, full-stack web applications that integrate 
+    dynamic frontend interfaces with secure backend systems and databases.
+</p>
+
+<div class="tag action">Action</div>
+<p>
+   Developed backend functionality using ASP.NET Core and built interactive frontend applications using React. 
+    Integrated frontend with backend services and designed relational databases using SQL Server.
+</p>
+
+<div class="tag result">Result</div>
+<p>
+    Delivered complete end-to-end web solutions with optimized performance, 
+    clean architecture, and maintainable, production-ready code.
+</p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="services">
+
+<h2 class="section-title">Services</h2>
+
+<div class="services-container">
+
+<!-- Service 1 -->
+<div class="service-card">
+
+<h3>Web Development</h3>
+
+<p>
+Building modern and responsive websites using the latest frontend technologies.
+</p>
+
+<ul>
+<li>Responsive website design</li>
+<li>Modern UI development</li>
+<li>Interactive user interfaces</li>
+</ul>
+
+</div>
+
+
+<!-- Service 2 -->
+<div class="service-card">
+
+<h3>Backend Development</h3>
+
+<p>
+Developing secure and scalable backend systems and APIs.
+</p>
+
+<ul>
+<li>REST API development</li>
+<li>Authentication systems</li>
+<li>Server-side logic</li>
+</ul>
+
+</div>
+
+
+<!-- Service 3 -->
+<div class="service-card">
+
+<h3>Database Design</h3>
+
+<p>
+Designing structured and efficient databases for scalable applications.
+</p>
+
+<ul>
+<li>Database schema design</li>
+<li>SQL queries optimization</li>
+<li>Data management</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<section id="projects" class="projects">
+  <p class="subtitle">MY RECENT WORK</p>
+  <h1 class="title">Projects</h1>
+
+  <!-- Filter Buttons -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="frontend">Frontend</button>
+    <button class="filter-btn" data-filter="backend">Backend</button>
+    <button class="filter-btn" data-filter="full">Full-Stack</button>
+  </div>
+
+  <div class="projects-container">
+    <!-- Project 1 -->
+    <div class="project-card" data-category="frontend">
+      <img src="https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/portfolios/284995_699570e4a3979_1771401444.webp" alt="Online Courses Project">
+      <div class="project-info">
+        <p class="date">Jun 2025</p>
+        <h2 class="project-title">Online Courses Platform</h2>
+        <p>
+          An interactive online course platform that allows users to:
+          <ul>
+            <li>Browse available courses</li>
+            <li>View course details</li>
+            <li>Perform real-time search and filter by category</li>
+            <li>Register for courses</li>
+            <li>Add courses to the shopping cart</li>
+            <li>Generate an auto-ready invoice for printing</li>
+          </ul>
+        </p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <a href="https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/portfolios/284995_699570b60bbe2_1771401398.webp" target="_blank">
+          <button>View Project Pages</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card" data-category="frontend">
+      <img src="https://nafezly-production.fra1.cdn.digitaloceanspaces.com/uploads/portfolios/284995_69aee93d01596_1773070653.webp" alt="Travel Booking Project">
+      <div class="project-info">
+        <p class="date">Jun 2025</p>
+        <h2 class="project-title">Online Travel Booking Platform</h2>
+        <p>
+          This platform allows users to:
+          <ul>
+            <li>Browse available destinations</li>
+            <li>View details of each destination</li>
+            <li>Register personal information</li>
+            <li>View reviews from other users</li>
+            <li>Contact the admin for inquiries</li>
+          </ul>
+        </p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+        <a href="https://kafiil.s3.eu-central-1.amazonaws.com/media/gallery/c66665dd721abe45d87fb7ee876b43e7/c/f9acd654acadb92708f52cb837b14127-large.jpg" target="_blank">
+          <button>View Project Pages</button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2 class="section-title">Testimonials</h2>
+
+  <div class="coming-soon-card" style="background:#1e293b; padding:50px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.4); text-align:center; color:#38bdf8; font-size:20px; font-weight:bold; margin-top:40px;">
+    🚧 Coming Soon! 🚧 <br>
+    Stay tuned for client feedback and testimonials.
+  </div>
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact-wrapper">
+
+<div class="contact-card">
+
+<p>Have a project or want to connect? Send me a message!</p>
+
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+  <button type="submit" id="contact-button">Send Message</button>
+</form>
+<p id="form-message" style="margin-top:15px;"></p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+    © 2026 Shery Emad | All Rights Reserved
+</footer>
+
+
+
+<!-- CSS -->
+<style>
+.contact-wrapper{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+.contact-card{
+background:#1e293b;
+padding:40px;
+border-radius:15px;
+max-width:600px;
+width:100%;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-6px);
+box-shadow:0 5px 25px rgba(56,189,248,0.4);
+}
+
+.contact-card form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-card input,
+.contact-card textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+font-size:14px;
+resize:none;
+}
+
+.contact-card button{
+padding:12px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact-card button:hover{
+background:white;
+}
+
+#form-message{
+color:#34d399;
+font-weight:bold;
+}
+</style>
+
+<!-- JS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+const words = ["Full Stack Developer", ".NET Developer", "React Developer"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+            setTimeout(() => isDeleting = true, 1200);
+        }
+    } else {
+        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    }
+
+    setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+
+typeEffect();
+
+});
+
+const buttons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".project-card");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+            if (filter === "all" || card.dataset.category === filter) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    emailjs.init("EkocMw9jsGZL34192"); // المفتاح العام
+
+    const contactForm = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
+    const contactButton = document.getElementById("contact-button");
+
+    if(contactForm){
+        contactForm.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            contactButton.disabled = true;
+            contactButton.textContent = "Sending...";
+
+            emailjs.sendForm("service_nx34sn8", "__ejs-test-mail-service__", this)
+            .then(() => {
+                formMessage.textContent = "✅ Your message has been sent successfully!";
+                contactButton.textContent = "Send Message";
+                contactButton.disabled = false;
+                this.reset();
+            }, (err) => {
+                formMessage.textContent = "❌ Oops! Something went wrong. Please try again.";
+                contactButton.textContent = "Send Message";
+                contactButton.disabled = false;
+                console.error(err);
+            });
+        });
+    }
+
+});
+</script>
+</html>
